@@ -1,0 +1,30 @@
+{
+  "name": "loyalty",
+  "version": "1.0.0",
+  "description": "loyalt program for shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandeeppatel344/loyalty.git"
+  },
+  "keywords": [
+    "loyalty"
+  ],
+  "author": "sandeep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandeeppatel344/loyalty/issues"
+  },
+  "homepage": "https://github.com/sandeeppatel344/loyalty#readme",
+  "dependencies": {
+    "async": "^2.1.4",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "lodash": "^4.17.4",
+    "pg": "^6.1.2"
+  }
+}
