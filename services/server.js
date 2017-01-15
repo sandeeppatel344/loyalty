@@ -12,7 +12,7 @@ app.use(bodyParser());
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-var modules = ["customerregistration"];
+var modules = ["customerregistration","shopmaster"];
 _(modules).forEach(function(module) {
     var router = require('./projections/' + module + '/routes/routes.js');
     var provider = require('./projections/' + module + '/dbprovider/' + 'postgressql' + '.js');
@@ -25,7 +25,6 @@ _(modules).forEach(function(module) {
 app.listen(9111, function() {
     console.log("Listening on " + "9111");
 });
-/*
 process.on('uncaughtException', function (err) {
     console.log("UNCAUGHT EXCEPTION" + err);
-});*/
+});

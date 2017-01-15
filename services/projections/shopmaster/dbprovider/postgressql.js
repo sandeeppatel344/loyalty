@@ -1,4 +1,7 @@
 /**
+ * Created by sandeep on 1/15/2017.
+ */
+/**
  * Created by sandeep on 1/13/2017.
  */
 var _ = require('lodash');
@@ -6,12 +9,12 @@ var postGresAdaptor = require('../../../configuration/postgresadaptor');
 var async= require('async');
 
 
-var saveCustomer = function(dbName, headerQuery, itemQuery, queryParams, callback){
+var saveShopsMaster = function(dbName, data, tablename, callback){
     var queryRes = {data:{}};
     async.waterfall([
         function(callback){
-            if(headerQuery){
-                postGresAdaptor.executeQueryWithParameters(dbName, headerQuery, queryParams, function(error, result) {
+            if(data){
+                postGresAdaptor.insert(dbName, data, tablename, function(error, result) {
                     if (error) {
                         callback(error);
                     } else {
@@ -19,12 +22,12 @@ var saveCustomer = function(dbName, headerQuery, itemQuery, queryParams, callbac
                     }
                 });
             } else{
-                callback(null,{data:[{}]});
+                callback(null,queryRes);
             }
 
-        },
+        }
 
-        function(headerResult, callback){
+/*        function(headerResult, callback){
             postGresAdaptor.executeQueryWithParameters(dbName, itemQuery, queryParams, function(error, result) {
                 if (error) {
                     callback(error);
@@ -41,7 +44,7 @@ var saveCustomer = function(dbName, headerQuery, itemQuery, queryParams, callbac
                 }
             });
 
-        }
+        }*/
     ], function(err){
         if (err) {
             callback(err);
@@ -53,8 +56,12 @@ var saveCustomer = function(dbName, headerQuery, itemQuery, queryParams, callbac
 };
 
 
-module.exports.saveCustomer = function(req,callback){
-    console.log(req)
-    callback(null,{data:[]})
+module.exports.saveShopsMaster = function(req,callback){
+    var params = req.body
+    var postData = {shopname:params.shopname,location:params.location,createdby:params.createdby}
+    saveShopsMaster("loyalty",postData,"shopmaster",callback);
     //saveCustomer()
+}
+module.exports.getListOfShops = function(req,callback){
+    
 }

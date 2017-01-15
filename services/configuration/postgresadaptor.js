@@ -52,7 +52,7 @@ var executeQueryWithParameters = function(dbName, query, params, callback){
     });
 };
 
-
+exports.executeQueryWithParameters = executeQueryWithParameters;
 
 module.exports.insert = function(dbName, data, tablename,  callback)
 {
@@ -68,7 +68,7 @@ module.exports.insert = function(dbName, data, tablename,  callback)
             console.log("Error in inserting : " + error);
             callback(error);
         } else {
-            console.log("Insertion Successfull: " + result);
+            console.log("Insertion Successfull: " + JSON.stringify(result));
 
             callback(null, result);
         }
@@ -111,5 +111,5 @@ module.exports.update = function(dbName, where, data, tablename,  callback)
 
 var getConnection =  function(dbName, callback){
     console.log("Establishing connection with postgre");
-    pg.connect(connectionString.POST_GRE_CONNECTION_STRING, callback);
+    pg.connect("postgres://postgres:root@localhost:5432/loyalty", callback);
 };
