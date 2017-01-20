@@ -63,5 +63,5 @@ module.exports.saveShopsMaster = function(req,callback){
     //saveCustomer()
 }
 module.exports.getListOfShops = function(req,callback){
-    
+
 }
