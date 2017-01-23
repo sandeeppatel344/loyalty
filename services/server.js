@@ -11,7 +11,8 @@ app.use(cors());
 app.use(bodyParser());
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-
+app.use(express.static(__dirname+'/../public'));
+console.log(__dirname+'/../public')
 var modules = ["customerregistration","shopmaster","employeeregistration"];
 _(modules).forEach(function(module) {
     var router = require('./projections/' + module + '/routes/routes.js');
