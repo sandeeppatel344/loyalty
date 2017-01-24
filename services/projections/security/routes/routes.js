@@ -13,14 +13,4 @@ module.exports.init = function(app,repo){
             }
         })
     })
-    app.get("/list/shopmaster",function(req,res){
-        projectrepo.getListOfShops(req,function(error,data){
-            if(error){
-                console.log(error)
-                res.json({data:error})
-            }else{
-                res.json(data);
-            }
-        })
-    })
 }

@@ -6,7 +6,4 @@ module.exports.init = function(provider){
     module.exports.saveShopsMaster = function(req,callback){
         this.provider.saveShopsMaster(req,callback)
     }
-    module.exports.getListOfShops = function(req,callback){
-        this.provider.getListOfShops(req,callback)
-    }
 }
