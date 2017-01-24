@@ -5,17 +5,23 @@ var app = angular.module("Loyalty",['ui.router']);
 app.run(function(){
 
 });
-app.config(function($urlRouterProvider, $stateProvider){
+app.config(function($urlRouterProvider, $stateProvider, $locationProvider){
+
     $stateProvider.state('app', {
         url : '/app',
         abstract :true
     }).state("app.login",{
-        url:'app/login',
-        templateUrl:'/admin/app/login/views/login.html'/*,
-        controller:'loginCtrl'*/
+        url:'/login',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/login/views/login.html',
+                controller:'loginCtrl'
+            }
+        }
 
     })
-    $urlRouterProvider.otherwise('/app/login')
+    $urlRouterProvider.otherwise('app/login')
 })
 angular.element(document).ready(function ($rootScope) {
     angular.bootstrap(document,["Loyalty"])
