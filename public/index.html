@@ -1,27 +1,36 @@
-
 <html lang="en" class="body-full-height">
 <head>
     
     <title>Loyalty</title>
-     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-     <link rel="stylesheet" type="text/css" id="theme" href="admin/css/theme-default.css"/>
+    <link rel="stylesheet" type="text/css" id="theme" href="admin/css/theme-default.css"/>
 
+ <!-- START SCRIPTS -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="admin/app/app.js"></script>
+    <script type="text/javascript" src="admin/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="admin/js/plugins/bootstrap/bootstrap.min.js"></script><script src="admin/app/app.js"></script>
     <script src="admin/app/login/controllers/loginctrl.js"></script>
+            
+      
 
 
- <!-- START SCRIPTS -->
+    
+
+
+</head>
+<body>
+<div data-ui-view></div>
+</body>
+<!-- START SCRIPTS -->
         <!-- START PLUGINS -->
-        <script type="text/javascript" src="admin/js/plugins/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="admin/js/plugins/jquery/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="admin/js/plugins/bootstrap/bootstrap.min.js"></script>        
         <!-- END PLUGINS -->
 
         <!-- START THIS PAGE PLUGINS-->        
@@ -40,6 +49,7 @@
         
         <script type="text/javascript" src="admin/js/plugins/moment.min.js"></script>
         <script type="text/javascript" src="admin/js/plugins/daterangepicker/daterangepicker.js"></script>
+        <script type="text/javascript" src="admin/js/plugins/fullcalendar/fullcalendar.min.js"></script>
         <!-- END THIS PAGE PLUGINS-->        
 
         <!-- START TEMPLATE -->
@@ -51,11 +61,5 @@
         <script type="text/javascript" src="admin/js/demo_dashboard.js"></script>
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->   
-    
-
-
-</head>
-<body>
-<div data-ui-view></div>
-</body>
+ 
 </html>

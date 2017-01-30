@@ -32,6 +32,29 @@ app.config(function($urlRouterProvider, $stateProvider, $locationProvider){
         }
 
     })
+
+    .state("app.addressbook",{
+        url:'/addressbook',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/addressbook/views/addressbook.html'
+            }
+        }
+
+    })
+
+    .state("app.calendar",{
+        url:'/calendar',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/calendar/views/calendar.html'
+            }
+        }
+
+    })
+
     $urlRouterProvider.otherwise('app/login')
 })
 angular.element(document).ready(function ($rootScope) {
