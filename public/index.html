@@ -28,6 +28,11 @@
 </head>
 <body>
 <div data-ui-view></div>
+
+<!-- START PRELOADS -->
+        <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
+        <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
+        <!-- END PRELOADS --> 
 </body>
 <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
@@ -44,13 +49,27 @@
         <script type="text/javascript" src="admin/js/plugins/rickshaw/rickshaw.min.js"></script>
         <script type='text/javascript' src='admin/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
         <script type='text/javascript' src='admin/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>                
-        <script type='text/javascript' src='admin/js/plugins/bootstrap/bootstrap-datepicker.js'></script>                
+        <script type='text/javascript' src='admin/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+
+        <!-- for Form pages start-->
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+        <script type="text/javascript" src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+
+        <!-- for Form pages end-->
+
         <script type="text/javascript" src="admin/js/plugins/owl/owl.carousel.min.js"></script>                 
         
         <script type="text/javascript" src="admin/js/plugins/moment.min.js"></script>
         <script type="text/javascript" src="admin/js/plugins/daterangepicker/daterangepicker.js"></script>
         <script type="text/javascript" src="admin/js/plugins/fullcalendar/fullcalendar.min.js"></script>
-        <!-- END THIS PAGE PLUGINS-->        
+
+
+        <!-- for FAQ pages start-->
+        <script type="text/javascript" src="js/plugins/highlight/jquery.highlight-4.js"></script>
+
+        <script type="text/javascript" src="js/faq.js"></script>       
+        <!-- for FAQ pages end-->
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="admin/js/settings.js"></script>
@@ -59,6 +78,8 @@
         <script type="text/javascript" src="admin/js/actions.js"></script>
         
         <script type="text/javascript" src="admin/js/demo_dashboard.js"></script>
+
+         <script type="text/javascript" src="js/demo_tasks.js"></script>
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->   
  
