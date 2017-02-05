@@ -7,7 +7,13 @@
 var _ = require('lodash');
 var postGresAdaptor = require('../../../configuration/postgresadaptor');
 var async= require('async');
+var redis = require("redis");
+client = redis.createClient();
+var uuid = require('uuid/v4');
 
+client.on("error",function(error){
+    console.log("Redis Error"+error);
+})
 
 var saveShopsMaster = function(dbName, data, tablename, callback){
     var queryRes = {data:{}};
@@ -56,19 +62,32 @@ var saveShopsMaster = function(dbName, data, tablename, callback){
 };
 
 
-module.exports.saveShopsMaster = function(req,callback){
+/*module.exports.userLogin = function(req,callback){
     var params = req.body
     var postData = {shopname:params.shopname,location:params.location,createdby:params.createdby}
-    saveShopsMaster("loyalty",postData,"shopmaster",callback);
+    //saveShopsMaster("loyalty",postData,"shopmaster",callback);
     //saveCustomer()
-}
-module.exports.getListOfShops = function(req,callback){
-    var query = "select * from shopmaster";
-    postGresAdaptor.executeQuery("loyalty",query,function(error,result){
+}*/
+module.exports.userLogin = function(req,callback){
+    var token = uuid();
+    client.set(token,token)
+   client.get(token,function(error,res){
+       console.log(res);
+       callback({"token":res})
+    })
+    var params = [];
+
+/*    var query = "select * from emplyeemaster where userid=$1 and password=$2";
+    postGresAdaptor.executeQueryWithParameters("loyalty",query,params,function(error,result){
         if(error){
             callback(error);
         }else{
+
+            var token = uuid();
+            client.set("token",token)
+            console.log(client.get("token"))
             callback(null,result);
+
         }
-    })
+    })*/
 }

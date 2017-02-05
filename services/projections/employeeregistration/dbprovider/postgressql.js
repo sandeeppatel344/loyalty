@@ -6,6 +6,7 @@
  */
 var _ = require('lodash');
 var postGresAdaptor = require('../../../configuration/postgresadaptor');
+var sms = require('../../../configuration/sendsms');
 var async= require('async');
 var uuid = require('uuid/v4');
 var http = require('http');
@@ -43,11 +44,14 @@ var saveEmployee = function(dbName, data, tablename, callback){
 
          }
          });*/
-            http.get("http://msg.socialkart.tk/api/sendmsg.php?user=ashishbakliwal&pass=ashish123&sender=ashish&phone="+data.mobile+"&text=Thank you for Registration&priority=ndnd&stype=normal",function(res){
+            sms(data.mobile,"Thank you for registration",data.firstname,function(res){
+                console.log(res);
+            })
+           /* http.get("http://msg.socialkart.tk/api/sendmsg.php?user=ashishbakliwal&pass=ashish123&sender=ashish&phone="+data.mobile+"&text=Thank you for Registration&priority=ndnd&stype=normal",function(res){
                 callback(null, queryRes);
             },function(error){
                 callback(error);
-            })
+            })*/
 
          }
     ], function(err){
