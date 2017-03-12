@@ -32,6 +32,108 @@ app.config(function($urlRouterProvider, $stateProvider, $locationProvider){
         }
 
     })
+
+    .state("app.addressbook",{
+        url:'/addressbook',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/addressbook/views/addressbook.html'
+            }
+        }
+
+    })
+
+    .state("app.calendar",{
+        url:'/calendar',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/calendar/views/calendar.html'
+            }
+        }
+
+    })
+
+    .state("app.employeereg",{
+        url:'/employeereg',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/employeereg/views/employeereg.html'
+            }
+        }
+
+    })
+
+    .state("app.coupan",{
+        url:'/coupan',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/coupan/views/coupan.html'
+            }
+        }
+
+    })
+
+    .state("app.faq",{
+        url:'/faq',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/faq/views/faq.html'
+            }
+        }
+
+    })
+
+    .state("app.feedback",{
+        url:'/feedback',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/feedback/views/feedback.html'
+            }
+        }
+
+    })
+
+    .state("app.promotion",{
+        url:'/promotion',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/promotion/views/promotion.html'
+            }
+        }
+
+    })
+
+    .state("app.shopreg",{
+        url:'/shopreg',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/shopreg/views/shopreg.html'
+            }
+        }
+
+    })
+
+     .state("app.tasks",{
+        url:'/tasks',
+        cache:false,
+        views : {
+            '@' : {
+                templateUrl : 'admin/app/tasks/views/tasks.html'
+            }
+        }
+
+    })
+
+
+
     $urlRouterProvider.otherwise('app/login')
 })
 angular.element(document).ready(function ($rootScope) {
