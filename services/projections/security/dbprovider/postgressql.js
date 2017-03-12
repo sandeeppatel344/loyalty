@@ -33,24 +33,6 @@ var saveShopsMaster = function(dbName, data, tablename, callback){
 
         }
 
-/*        function(headerResult, callback){
-            postGresAdaptor.executeQueryWithParameters(dbName, itemQuery, queryParams, function(error, result) {
-                if (error) {
-                    callback(error);
-                } else {
-                    try{
-                        queryRes.data.header = headerResult.data[0];
-                        queryRes.data.header.items = result.data;
-                        callback(null, queryRes);
-                    }catch(e){
-
-                        callback(null, queryRes);
-                    }
-
-                }
-            });
-
-        }*/
     ], function(err){
         if (err) {
             callback(err);
@@ -61,13 +43,6 @@ var saveShopsMaster = function(dbName, data, tablename, callback){
 
 };
 
-
-/*module.exports.userLogin = function(req,callback){
-    var params = req.body
-    var postData = {shopname:params.shopname,location:params.location,createdby:params.createdby}
-    //saveShopsMaster("loyalty",postData,"shopmaster",callback);
-    //saveCustomer()
-}*/
 module.exports.userLogin = function(req,callback){
     var token = uuid();
     client.set(token,token)
@@ -77,17 +52,4 @@ module.exports.userLogin = function(req,callback){
     })
     var params = [];
 
-/*    var query = "select * from emplyeemaster where userid=$1 and password=$2";
-    postGresAdaptor.executeQueryWithParameters("loyalty",query,params,function(error,result){
-        if(error){
-            callback(error);
-        }else{
-
-            var token = uuid();
-            client.set("token",token)
-            console.log(client.get("token"))
-            callback(null,result);
-
-        }
-    })*/
 }
